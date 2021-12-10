@@ -1,0 +1,41 @@
+[
+    {
+        "title":"Letters",
+        "img":"Images/learn/letters.png"
+    },
+
+    {
+        "title":"Presentation",
+        "img":"Images/learn/presentation.png"
+    },
+
+    {
+        "title":"Politeness",
+        "img":"Images/learn/polite.png"
+    },
+
+    {
+        "title":"Food",
+        "img":"Images/learn/food.png"
+    },
+
+    {
+        "title":"Animals",
+        "img":"Images/learn/animals.png"
+    },
+
+    {
+        "title":"Clothes",
+        "img":"Images/learn/clothes.png"
+    },
+
+    {
+        "title":"Nature",
+        "img":"Images/learn/nature.png"
+    },
+
+    {
+        "title":"Feelings",
+        "img":"Images/learn/feelings.png"
+    }
+]
