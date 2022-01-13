@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  video_player: ^2.2.8
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -56,6 +57,9 @@ flutter:
   assets:
      - Images/
      - Images/learn/
+     - Images/learn/Letters/
+     - Videos/Letters/A.mp4
+     - Videos/Letters/B.mp4
      - json/
 
   fonts:
@@ -66,6 +70,11 @@ flutter:
      - family: Lato
        fonts:
          - asset: fonts/Lato-Regular.ttf
+     - family: Poppins
+       fonts:
+         - asset: assets/fonts/Poppins-Bold.ttf
+           weight: 600
+
 
 
 

@@ -5,6 +5,9 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'learn/Letters.dart';
+import 'learn/Food.dart';
+
 
 class learn extends StatefulWidget{
   const learn({Key?key}):super(key: key);
@@ -16,7 +19,10 @@ class learn extends StatefulWidget{
 
 class _learnState extends State<learn>{
 
+  
+
   List info=[];
+
 
   _initData(){
     DefaultAssetBundle.of(context).loadString("json/info.json").then((value) {
@@ -55,78 +61,112 @@ class _learnState extends State<learn>{
                     ],
                   ),
                   ActionList(),
+                  
                   Expanded(
                     child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: (info.length.toDouble()/2).toInt(),
-                    itemBuilder: (_,i){
-                      int a=2*i;
-                      int b=2*i+1;
-                      return Row(
-                        children: [
-                          Container(
-                            width: 144,
-                            height: 144,
-                            margin:EdgeInsets.only(left: 15,bottom: 10) ,
-                            padding:EdgeInsets.only(bottom:2),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.brown[50],
-                                image: DecorationImage(
-                                  alignment: Alignment.center,
-                                    image: AssetImage(
-                                        info[a]['img']
-                                    ) ),
-
-                            ),
-                            child:Center(
-                              child: Align(
-                                alignment:Alignment.bottomCenter,
-                                child: Text(
-                                  info[a]['title'],
-                                  style:TextStyle(
-                                    fontFamily: 'Nunito Sans',
-                                    fontSize: 20,
-                                    color: Colors.brown[600],
-                                   )
+                      shrinkWrap: true,
+                      itemCount: (info.length.toDouble()/2).toInt(),
+                      itemBuilder: (_,i){
+                        int a=2*i;
+                        int b=2*i+1;
+                        return Row(
+                          children: [
+                  
+                               
+                           
+                              
+                              
+                                GestureDetector(
+                                  onTap: (){
+                                   Navigator.push(
+                                     context,
+                                     MaterialPageRoute(builder: (context) => Food()),
+                          );  
+                                  },
+                                  child: Container(
+                                    width: 144,
+                                    height: 144,
+                                    margin:EdgeInsets.only(left: 15,bottom: 10) ,
+                                    padding:EdgeInsets.only(bottom:2),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.brown[50],
+                                        image: DecorationImage(
+                                          alignment: Alignment.center,
+                                            image: AssetImage(
+                                                info[a]['img']
+                                            ) ),
+                                                            
+                                    ),
+                                    child:Center(
+                                      child: Align(
+                                        alignment:Alignment.bottomCenter,
+                                        child: Text(
+                                          info[a]['title'],
+                                          style:TextStyle(
+                                            fontFamily: 'Nunito Sans',
+                                            fontSize: 20,
+                                            color: Colors.brown[600],
+                                           )
+                                  
+                                          ),
+                                      )),
+                                     
+                                                            
+                                                              ),
+                                ),
+                                
+                        
+                            
+                  
+                            
+                           
+                               GestureDetector(
+                                 onTap: (){
+                                    Navigator.push(
+                                     context,
+                                     MaterialPageRoute(builder: (context) => Food()),
+                          );
+                                  },
+                                 child: Container(
+                                    width: 144,
+                                    height: 144,
+                                    margin:EdgeInsets.only(left: 15,bottom: 10) ,
+                                    padding:EdgeInsets.only(bottom:2),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.brown[50],
+                                        image: DecorationImage(
+                                          alignment: Alignment.center,
+                                            image: AssetImage(
+                                                info[b]['img']
+                                            ) ),
+                                                          
+                                    ),
+                                    child:Center(
+                                      child: Align(
+                                        alignment:Alignment.bottomCenter,
+                                        child: Text(
+                                          info[b]['title'],
+                                          style:TextStyle(
+                                            fontFamily: 'Nunito Sans',
+                                            fontSize: 20,
+                                            color: Colors.brown[600],
+                                           )
+                                          ),
+                                      )),
+                                                          
                                   ),
-                              )),
-
-                          ),
-
-                          Container(
-                            width: 144,
-                            height: 144,
-                            margin:EdgeInsets.only(left: 15,bottom: 10) ,
-                            padding:EdgeInsets.only(bottom:2),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.brown[50],
-                                image: DecorationImage(
-                                  alignment: Alignment.center,
-                                    image: AssetImage(
-                                        info[b]['img']
-                                    ) ),
-
-                            ),
-                            child:Center(
-                              child: Align(
-                                alignment:Alignment.bottomCenter,
-                                child: Text(
-                                  info[b]['title'],
-                                  style:TextStyle(
-                                    fontFamily: 'Nunito Sans',
-                                    fontSize: 20,
-                                    color: Colors.brown[600],
-                                   )
-                                  ),
-                              )),
-
-                          )
-                          
-                        ],);
-                    },
-                  ),)
+                               ),
+                              
+                            
+                  
+                            
+                            
+                          ],);
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -186,3 +226,4 @@ class _ActionListState extends State<ActionList> {
     );
   }
 }
+
